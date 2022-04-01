@@ -40,5 +40,24 @@ def test_get_student_with_more_classes():
         "sophomore",
         ["mathematics", "foundations of computing"]
     )
-
+    winner = get_student_with_more_classes(charles, ada)
+    winner2 = get_student_with_more_classes(ada, charles)
     # TODO: write assertions
+    assert winner == ada
+    assert winner2 == ada
+
+
+def test_student_class_with_no_courses(): 
+    
+    # arrange
+    name = "Ada Lovelace"
+    level = "sophomore"
+    
+    
+    # act
+    ada = Student(name, level)
+
+    # assert
+    assert ada.name == name
+    assert ada.level == level
+    assert ada.courses == []
